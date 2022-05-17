@@ -1,3 +1,5 @@
+import ApiClient from '../../data/apiClient';
+
 const FETCHED_COUNTRIES = 'covid19traking/countries/FETCHED_COUNTRIES';
 const FETCHING_COUNTRIES = 'covid19traking/countries/FETCHING_COUNTRIES';
 
@@ -8,6 +10,7 @@ export function fetching() {
 }
 
 export function fetchedCountries(countries) {
+  console.log(countries);
   return {
     type: FETCHED_COUNTRIES,
     countries,

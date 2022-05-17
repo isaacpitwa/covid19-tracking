@@ -3,9 +3,11 @@ import { configureStore } from '@reduxjs/toolkit';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 
+import Countries from './countries/countries';
+
 const loggerMiddleware = createLogger();
 const rootReducer = combineReducers({
-    byCountry: 
+  countries: Countries,
 });
 export default configureStore({
   reducer: rootReducer,
