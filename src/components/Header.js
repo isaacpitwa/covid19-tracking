@@ -2,10 +2,10 @@ import React from 'react';
 
 function Header() {
   return (
-    <div>
+    <header>
       <h1>COVID-19 Tracking</h1>
-      <input type="date" defaultValue={Date.now()} />
-    </div>
+      <input type="date" value={Date.now()} />
+    </header>
   );
 }
 export default Header;

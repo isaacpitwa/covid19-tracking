@@ -5,7 +5,7 @@ import thunkMiddleware from 'redux-thunk';
 
 const loggerMiddleware = createLogger();
 const rootReducer = combineReducers({
-    
+    byCountry: 
 });
 export default configureStore({
   reducer: rootReducer,
