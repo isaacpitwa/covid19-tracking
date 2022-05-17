@@ -25,14 +25,14 @@ Take a look at the Movies page we Create => [link](https://math-magics.netlify.a
 
 ## Development set up
 Clone Repository  using 
-`git@github.com:isaacpitwa/booklist.git` 
+`git@github.com:isaacpitwa/covid19-tracking.git` 
 
 OR  using HTTPS
 
-`https://github.com/isaacpitwa/booklist.git` 
+`https://github.com/isaacpitwa/covid19-tracking.git` 
 
 move into project directory
-`cd booklist`
+`cd covid19-tracking`
 
 Install  Project dependancies using `NPM`
 
