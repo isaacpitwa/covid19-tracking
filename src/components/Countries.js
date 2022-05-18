@@ -12,7 +12,9 @@ function Countries() {
   const countries = useSelector((state) => state.countries.countries);
 
   useEffect(() => {
-    dispatch(fetchCountries(params.date));
+    if (countries === undefined || countries.length === 0) {
+      dispatch(fetchCountries(params.date));
+    }
   }, [dispatch]);
   return (
     <>
@@ -29,7 +31,7 @@ function Countries() {
         <div />
       </nav>
       <ul>
-        { countries ? countries.sort(() => Math.random() - 0.5).map((country) => <Country key={country.id} name={country.name} confirmedCases={country.today_new_confirmed} />) : 'Loading'}
+        { countries ? countries.map((country) => <Country key={country.id} name={country.name} confirmedCases={country.today_new_confirmed} />) : 'Loading'}
       </ul>
     </>
 

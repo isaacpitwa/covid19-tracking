@@ -3,6 +3,7 @@ import ApiClient from '../../data/apiClient';
 const FETCHED_COUNTRIES = 'covid19traking/countries/FETCHED_COUNTRIES';
 
 const FETCHED_REGIONS = 'covid19traking/countries/FETCHED_REGIONS';
+const RESET = 'covid19traking/countries/RESET';
 
 export function fetchedCountries(apiResponse, date) {
   const formattedCountries = Object.entries(apiResponse.dates[date].countries).map(
@@ -35,12 +36,18 @@ export const fetchRegions = (date, country) => async (dispatch) => {
   }, 100);
 };
 
+export const reset = () => ({
+  type: RESET,
+});
+
 export default function reducer(state = [], action = {}) {
   switch (action.type) {
     case FETCHED_COUNTRIES:
-      return { ...state, fetching: false, countries: action.countries };
+      return { ...state, countries: action.countries };
     case FETCHED_REGIONS:
-      return { ...state, fetching: false, countryDetails: action.countryDetails };
+      return { ...state, countryDetails: action.countryDetails };
+    case RESET:
+      return { };
     default:
       return state;
   }

@@ -9,7 +9,9 @@ function Country(props) {
   return (
     <button
       className="link metric"
-      onClick={() => { navigate(`/${params.date}/countries/${name}`); }}
+      onClick={() => { 
+          navigate(`/${params.date}/countries/${name}`);
+        }}
       type="button"
       style={{ backgroundImage: 'url(\'/images/map.png\')' }}
     >
