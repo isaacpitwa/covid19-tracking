@@ -4,6 +4,7 @@ const FETCHED_COUNTRIES = 'covid19traking/countries/FETCHED_COUNTRIES';
 
 const FETCHED_REGIONS = 'covid19traking/countries/FETCHED_REGIONS';
 const RESET = 'covid19traking/countries/RESET';
+const RESET_COUNTRY_DETAILS = 'covid19traking/countries/RESET_COUNTRY_DETAILS';
 
 export function fetchedCountries(apiResponse, date) {
   const formattedCountries = Object.entries(apiResponse.dates[date].countries).map(
@@ -40,12 +41,18 @@ export const reset = () => ({
   type: RESET,
 });
 
+export const resetCountryDetails = () => ({
+  type: RESET_COUNTRY_DETAILS,
+});
+
 export default function reducer(state = [], action = {}) {
   switch (action.type) {
     case FETCHED_COUNTRIES:
       return { ...state, countries: action.countries };
     case FETCHED_REGIONS:
       return { ...state, countryDetails: action.countryDetails };
+    case RESET_COUNTRY_DETAILS:
+      return { ...state, countryDetails: {} };
     case RESET:
       return { };
     default:

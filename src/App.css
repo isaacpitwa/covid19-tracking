@@ -103,9 +103,6 @@ ul {
   font-family: 'Lato', sans-serif;
 }
 
-.countries-list {
-  padding-top: 46px;
-}
 
 
 /* Details */
@@ -116,7 +113,6 @@ ul {
   background-color: #FC5294;
   align-items: center;
   justify-content: center;
-  padding-top: 46px;
 }
 .details-header .img-bg{
   width: 70%;
@@ -174,6 +170,9 @@ ul {
   background-color: #FC5294;
   color: #fff;
   padding: 0 16px;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
 }
 .page-heading button {
   text-decoration: none;
@@ -197,6 +196,9 @@ button:hover{
 .space-div {
   width: 20%;
 }
+.countries-list {
+  padding-top: 46px;
+}
 
 @media (max-width: 480px) {
 .metric{
@@ -215,5 +217,10 @@ button:hover{
   z-index: 100;
   width: 100%;
 }
+.page-heading{
+  /* padding-top: 46px; */
+}
+
+
 
 }
