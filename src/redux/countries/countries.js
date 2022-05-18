@@ -52,7 +52,7 @@ export default function reducer(state = [], action = {}) {
     case FETCHED_REGIONS:
       return { ...state, countryDetails: action.countryDetails };
     case RESET_COUNTRY_DETAILS:
-      return { ...state, countryDetails: {} };
+      return { ...state, countryDetails: undefined };
     case RESET:
       return { };
     default:
