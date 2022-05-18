@@ -1,18 +1,19 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCountries } from '../redux/countries/countries';
+import Country from './Country';
 
 function Metrics() {
   const dispatch = useDispatch();
-  const countries = useSelector((state) => state.countries);
+  const countries = useSelector((state) => state.countries.countries);
 
   useEffect(() => {
-    if (countries.length === 0) {
-      dispatch(fetchCountries());
-    }
+    dispatch(fetchCountries());
   }, []);
   return (
-    <p>Metrics should show</p>
+    <ul>
+      { countries ? countries.map((country) => <Country key={country.id} name={country.name_es} confirmedCases={country.today_new_confirmed} />) : 'Loading'}
+    </ul>
   );
 }
 export default Metrics;

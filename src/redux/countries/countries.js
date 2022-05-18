@@ -9,11 +9,11 @@ export function fetching() {
   };
 }
 
-export function fetchedCountries(countries) {
-  console.log(countries);
+export function fetchedCountries(apiResponse) {
+  const formattedCountries = Object.entries(apiResponse.dates['2022-03-10'].countries).map(([key, value]) => ({ ...value, country: key }));
   return {
     type: FETCHED_COUNTRIES,
-    countries,
+    countries: formattedCountries,
   };
 }
 
@@ -25,12 +25,12 @@ export const fetchCountries = () => async (dispatch) => {
   }, 1000);
 };
 
-export default function reducer(state = [], action = {}) {
+export default function reducer(state = [], action = { countries: [] }) {
   switch (action.type) {
     case FETCHING_COUNTRIES:
-      return 'Under construction';
+      return { ...state, fetching: true };
     case FETCHED_COUNTRIES:
-      return 'Under construction';
+      return { ...state, fetching: false, countries: action.countries };
     default:
       return state;
   }
