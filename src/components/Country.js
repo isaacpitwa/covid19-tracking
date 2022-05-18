@@ -1,16 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function Country(props) {
   const { name, confirmedCases } = props;
-  return (
-    <Link to={`/2022-03-10/countries/${name}`}>
-      {' '}
-      {name}
-      :
-      {confirmedCases}
+  const params = useParams();
+  const navigate = useNavigate();
 
-    </Link>
+  return (
+    <button className="link metric" onClick={() => { navigate(`/${params.date}/countries/${name}`, { replace: true }); }} type="button" style={{ backgroundImage: 'url(\'/images/map.png\')' }}>
+      <div>
+        <h4>{name}</h4>
+        <p>
+          {confirmedCases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+          {' '}
+          Cases
+        </p>
+      </div>
+    </button>
   );
 }
 export default Country;

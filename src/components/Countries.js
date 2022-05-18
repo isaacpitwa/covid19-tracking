@@ -14,7 +14,7 @@ function Countries() {
   }, []);
   return (
     <ul>
-      { countries ? countries.map((country) => <Country key={country.id} name={country.name} confirmedCases={country.today_new_confirmed} />) : 'Loading'}
+      { countries ? countries.sort(() => Math.random() - 0.5).map((country) => <Country key={country.id} name={country.name} confirmedCases={country.today_new_confirmed} />) : 'Loading'}
     </ul>
   );
 }
