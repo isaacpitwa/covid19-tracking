@@ -1,11 +1,32 @@
 body{
   margin: 0;
+  padding: 0;
 }
 header{
   display: flex;
   justify-content: space-between;
-  padding: 8px 3%;
+  padding: 8px 0%;
 }
-header h1 {
+header h1, .select-dates h3{
  margin: 0;
+}
+.link {
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+}
+.metrics-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.metric {
+  width: 25%;
+  height: 32vh;
+  background-color: #DB4680;
+  color: #fff;
+}
+.metric:nth-of-type(8n+2), .metric:nth-of-type(8n+4),.metric:nth-of-type(8n+5),.metric:nth-of-type(8n+7){
+  background-color: #CF4277;
 }

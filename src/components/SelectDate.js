@@ -20,7 +20,7 @@ function SelectDate() {
     dispatch(fetchMetrics(inputDates.dateFrom, inputDates.dateTo));
   };
   return (
-    <div>
+    <div className="select-dates">
       <h3>Select Date Range</h3>
       <div>
         <input type="date" name="dateFrom" onChange={onChange} value={inputDates.dateFrom} />
