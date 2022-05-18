@@ -14,9 +14,9 @@ function Metrics() {
   return (
     <>
       <SelectDate />
-      <h4>Stats by Date</h4>
+      <h4 className="home-heading">Stats by Date</h4>
       <ul className="metrics-list">
-        { metrics ? metrics.map((metric) => <Metric key={metric.date} date={metric.date} confirmedCases={metric.todayConfirmed} />) : 'Loading'}
+        { metrics.length > 0 ? metrics.map((metric) => <Metric key={metric.date} date={metric.date} confirmedCases={metric.todayConfirmed} />) : 'Loading...'}
       </ul>
     </>
   );

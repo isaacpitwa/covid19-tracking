@@ -17,8 +17,46 @@ header h1, .select-dates h3{
 }
 ul {
   padding: 0;
+  margin-top: 0;
 }
+
+.select-dates {
+ display: flex;
+ justify-content: center;
+ /* align-items: center; */
+ background-color: #DB4680;
+ flex-direction: column;
+ padding: 16px;
+}
+.select-dates div {
+  display: flex;
+  padding: 16px;
+  padding-left: 0;
+}
+.select-dates div  input{
+  width: 35%;
+  height: 32px;
+  border: 2px solid #fff;
+  background-color: #DB4680;
+  margin-right: 8px;
+}
+.select-dates div button {
+  width: 30%;
+}
+.select-dates div button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+.home-heading {
+  background-color: #CF4277;
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+  padding: 16px;
+}
+
 .metrics-list{
+  margin: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -35,6 +73,10 @@ ul {
 }
 .metric:nth-of-type(8n+2), .metric:nth-of-type(8n+4),.metric:nth-of-type(8n+5),.metric:nth-of-type(8n+7){
   background-color: #CF4277;
+}
+.metric:hover{
+  cursor: pointer;
+  opacity: 0.6;
 }
 .metric div {
   position: absolute;
@@ -108,4 +150,33 @@ ul {
 }
 .regions-list {
   margin: 0;
+}
+/* Utilities */
+
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FC5294;
+  color: #fff;
+  padding: 0 16px;
+}
+.page-heading button {
+  text-decoration: none;
+  color: #fff;
+  border: 0;
+  background-color: #FC5294;
+
+}
+.page-heading button p{
+ display: flex;
+ align-items: center;
+}
+.page-heading h4 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+}
+button:hover{
+  cursor: pointer;
 }
