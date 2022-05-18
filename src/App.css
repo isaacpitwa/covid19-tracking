@@ -192,5 +192,11 @@ button:hover{
 .metric:nth-child(4n+1), .metric:nth-child(4n){
   background-color: #CF4277;
 }
+.page-heading {
+  position: fixed;
+  padding: 0;
+  z-index: 100;
+  width: 100%;
+}
 
 }
