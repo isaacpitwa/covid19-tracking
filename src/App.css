@@ -28,7 +28,7 @@ ul {
  flex-direction: column;
  padding: 16px;
  position: fixed;
- width: 98%;
+ width: 97%;
  z-index: 100;
 }
 .select-dates div {
@@ -56,6 +56,10 @@ ul {
   font-size: 16px;
   margin: 0;
   padding: 16px;
+  position: fixed;
+  width: 100%;
+  top: 122px;
+  z-index: 100;
 }
 
 .metrics-list{
@@ -63,6 +67,7 @@ ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding-top: 173px;
 }
 .metric {
   width: 25%;
@@ -98,6 +103,11 @@ ul {
   font-family: 'Lato', sans-serif;
 }
 
+.countries-list {
+  padding-top: 46px;
+}
+
+
 /* Details */
 
 .details-header {
@@ -106,6 +116,7 @@ ul {
   background-color: #FC5294;
   align-items: center;
   justify-content: center;
+  padding-top: 46px;
 }
 .details-header .img-bg{
   width: 70%;
