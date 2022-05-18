@@ -28,7 +28,7 @@ function Countries() {
           </button>
         </div>
         <h4>Countries</h4>
-        <div />
+        <div className="space-div" />
       </nav>
       <ul>
         { countries ? countries.map((country) => <Country key={country.id} name={country.name} confirmedCases={country.today_new_confirmed} />) : 'Loading'}

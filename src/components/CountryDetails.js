@@ -29,7 +29,7 @@ function CountryDetails() {
           </button>
         </div>
         <h4>{params.countryName}</h4>
-        <div />
+        <div className="space-div" />
       </nav>
       { countryDetails ? (
         <>
