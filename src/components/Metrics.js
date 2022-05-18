@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchCountries } from '../redux/countries/countries';
-import Country from './Country';
+import { fetchMetrics } from '../redux/metrics/Metrics';
+import Metric from './Metric';
 
 function Metrics() {
   const dispatch = useDispatch();
-  const countries = useSelector((state) => state.countries.countries);
+  const metrics = useSelector((state) => state.metrics);
 
   useEffect(() => {
-    dispatch(fetchCountries());
-  }, []);
+    dispatch(fetchMetrics('2022-03-10', '2022-03-17'));
+  }, [dispatch]);
   return (
     <ul>
-      { countries ? countries.map((country) => <Country key={country.id} name={country.name_es} confirmedCases={country.today_new_confirmed} />) : 'Loading'}
+      { metrics ? metrics.map((metric) => <Metric key={metric.date} date={metric.date} confirmedCases={metric.todayConfirmed} />) : 'Loading'}
     </ul>
   );
 }
