@@ -7,7 +7,12 @@ function Country(props) {
   const navigate = useNavigate();
 
   return (
-    <button className="link metric" onClick={() => { navigate(`/${params.date}/countries/${name}`); }} type="button" style={{ backgroundImage: 'url(\'/images/map.png\')' }}>
+    <button
+      className="link metric"
+      onClick={() => { navigate(`/${params.date}/countries/${name}`); }}
+      type="button"
+      style={{ backgroundImage: 'url(\'/images/map.png\')' }}
+    >
       <div>
         <h4>{name}</h4>
         <p>

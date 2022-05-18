@@ -13,12 +13,12 @@ function Countries() {
 
   useEffect(() => {
     dispatch(fetchCountries(params.date));
-  }, []);
+  }, [dispatch]);
   return (
     <>
       <nav className="page-heading">
         <div className="back">
-          <button to={`/${params.date}/countries`} onClick={() => { navigate(-1); }} type="button">
+          <button onClick={() => { navigate('/'); }} type="button">
             <p>
               <IoIosArrowBack size={18} />
               <span>{params.date}</span>

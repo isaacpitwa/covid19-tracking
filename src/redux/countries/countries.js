@@ -18,7 +18,7 @@ export const fetchCountries = (date) => async (dispatch) => {
   setTimeout(async () => {
     const response = await ApiClient.fetchCountries(date);
     dispatch(fetchedCountries(response, date));
-  }, 1000);
+  }, 100);
 };
 
 export function fetchedRegions(apiResponse, requestData) {
@@ -32,7 +32,7 @@ export const fetchRegions = (date, country) => async (dispatch) => {
   setTimeout(async () => {
     const response = await ApiClient.fetchRegions(date, country);
     dispatch(fetchedRegions(response, { date, country }));
-  }, 1000);
+  }, 100);
 };
 
 export default function reducer(state = [], action = {}) {

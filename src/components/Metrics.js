@@ -9,7 +9,9 @@ function Metrics() {
   const metrics = useSelector((state) => state.metrics);
 
   useEffect(() => {
-    dispatch(fetchMetrics('2022-03-10', '2022-03-17'));
+    if (metrics.length === 0) {
+      dispatch(fetchMetrics('2022-03-10', '2022-03-17'));
+    }
   }, [dispatch]);
   return (
     <>

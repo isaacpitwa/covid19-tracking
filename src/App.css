@@ -180,3 +180,17 @@ ul {
 button:hover{
   cursor: pointer;
 }
+
+@media (max-width: 480px) {
+.metric{
+  width: 50%;
+}
+.metric:nth-of-type(8n+2), .metric:nth-of-type(8n+4),.metric:nth-of-type(8n+5),.metric:nth-of-type(8n+7){
+  background-color: #DB4680;
+}
+
+.metric:nth-child(4n+1), .metric:nth-child(4n){
+  background-color: #CF4277;
+}
+
+}
