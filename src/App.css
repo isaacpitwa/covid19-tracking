@@ -51,6 +51,7 @@ ul {
   border: 2px solid #fff;
   background-color: #db4680;
   margin-right: 8px;
+  padding: 0 8px;
 }
 
 button:hover {
@@ -231,7 +232,7 @@ button:hover {
 }
 
 .countries-list {
-  padding-top: 46px;
+  padding-top: 168px;
 }
 
 .details-loading {
@@ -262,4 +263,24 @@ button:hover {
     z-index: 100;
     width: 100%;
   }
+}
+
+/* Filter */
+.filter {
+  justify-content: center;
+  background-color: #EC4C8A;
+  top: 46px;
+}
+
+.filter div select,
+.filter div input {
+  width: 40%;
+  border: 2px solid #fff;
+  background-color: #db4680;
+  padding: 0 8px;
+  color: #000;
+}
+
+.filter div input::placeholder {
+  color: #000;
 }

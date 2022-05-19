@@ -1,6 +1,8 @@
 import ApiClient from '../../data/apiClient';
 
 const FETCHED_COUNTRIES = 'covid19traking/countries/FETCHED_COUNTRIES';
+const SEARCH_COUNTRY = 'covid19traking/countries/SEARCH_COUNTRY';
+const SORT_COUNTRIES = 'covid19traking/countries/SORT_COUNTRIES';
 
 const FETCHED_REGIONS = 'covid19traking/countries/FETCHED_REGIONS';
 const RESET = 'covid19traking/countries/RESET';
@@ -41,6 +43,16 @@ export const reset = () => ({
   type: RESET,
 });
 
+export const searchCountry = (searchTxt) => ({
+  type: SEARCH_COUNTRY,
+  searchTxt,
+});
+
+export const sortCountries = (order) => ({
+  type: SORT_COUNTRIES,
+  order,
+});
+
 export const resetCountryDetails = () => ({
   type: RESET_COUNTRY_DETAILS,
 });
@@ -49,6 +61,28 @@ export default function reducer(state = [], action = {}) {
   switch (action.type) {
     case FETCHED_COUNTRIES:
       return { ...state, countries: action.countries };
+    case SEARCH_COUNTRY:
+      return {
+        ...state,
+        filteredCountries: state.countries.filter(
+          (country) => country.name.toLowerCase().startsWith(action.searchTxt.toLowerCase()),
+        ),
+        filter: action.searchTxt,
+      };
+    case SORT_COUNTRIES:
+      if (action.order === 'asc') {
+        return {
+          ...state,
+          filteredCountries: state.countries.sort((current,next)=>current.firstname.localeCompare(b.firstname)),
+          filter: false,
+        };
+      }
+      return {
+        ...state,
+        filteredCountries: state.countries,
+        filter: false,
+      };
+
     case FETCHED_REGIONS:
       return { ...state, countryDetails: action.countryDetails };
     case RESET_COUNTRY_DETAILS:
