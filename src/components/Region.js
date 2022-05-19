@@ -16,7 +16,7 @@ function Region(props) {
   );
 }
 
-Region.prototype = {
+Region.propTypes = {
   name: PropTypes.string.isRequired,
   confirmedCases: PropTypes.number.isRequired,
 };

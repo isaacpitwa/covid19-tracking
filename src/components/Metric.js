@@ -31,8 +31,8 @@ function Metric(props) {
   );
 }
 
-Metric.prototype = {
-  name: PropTypes.string.isRequired,
+Metric.propTypes = {
+  date: PropTypes.string.isRequired,
   confirmedCases: PropTypes.number.isRequired,
 };
 export default Metric;

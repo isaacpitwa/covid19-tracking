@@ -33,7 +33,7 @@ function Country(props) {
   );
 }
 
-Country.prototype = {
+Country.propTypes = {
   name: PropTypes.string.isRequired,
   confirmedCases: PropTypes.number.isRequired,
 };
