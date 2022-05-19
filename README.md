@@ -12,7 +12,7 @@ Take a look at the Project => [link](https://isaacpitwa.github.io/covid19-tracki
 ## Built With
 
 - React
-- REdux
+- React-Redux
 - Jsx
 - Webpack
 - GitFlow
