@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { reset } from '../redux/countries/countries';
@@ -29,4 +30,9 @@ function Metric(props) {
     </button>
   );
 }
+
+Metric.prototype = {
+  name: PropTypes.string.isRequired,
+  confirmedCases: PropTypes.number.isRequired,
+};
 export default Metric;

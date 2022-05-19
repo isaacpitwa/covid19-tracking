@@ -1,10 +1,8 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Region(props) {
   const { name, confirmedCases } = props;
-  const params = useParams();
-  const navigate = useNavigate();
 
   return (
     <div className="region">
@@ -17,4 +15,10 @@ function Region(props) {
     </div>
   );
 }
+
+Region.prototype = {
+  name: PropTypes.string.isRequired,
+  confirmedCases: PropTypes.number.isRequired,
+};
+
 export default Region;

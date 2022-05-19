@@ -9,7 +9,7 @@ export function fetchedMetrics(apiResponse) {
       {
         date: key,
         todayConfirmed: Object.entries(value.countries).map(
-          ([key, value]) => (value.today_new_confirmed),
+          ([key, value]) => (key ? (value.today_new_confirmed) : 0),
         ).reduce((a, b) => a + b, 0),
       }),
   );

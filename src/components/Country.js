@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import { resetCountryDetails } from '../redux/countries/countries';
 
 function Country(props) {
@@ -30,4 +32,9 @@ function Country(props) {
     </button>
   );
 }
+
+Country.prototype = {
+  name: PropTypes.string.isRequired,
+  confirmedCases: PropTypes.number.isRequired,
+};
 export default Country;
