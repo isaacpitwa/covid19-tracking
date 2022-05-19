@@ -33,7 +33,7 @@ function Countries() {
       </nav>
       <Filter />
       <ul className="countries-list">
-        { countries ? filter ? filteredCountries.map((country) => <Country key={country.id} name={country.name} confirmedCases={country.today_new_confirmed} />)  : countries.map((country) => <Country key={country.id} name={country.name} confirmedCases={country.today_new_confirmed} />) : 'Loading'}
+        { countries ? filter ? filteredCountries.map((country) => <Country key={country.id} name={country.name} confirmedCases={country.today_new_confirmed} />) : countries.map((country) => <Country key={country.id} name={country.name} confirmedCases={country.today_new_confirmed} />) : 'Loading'}
       </ul>
     </>
 
