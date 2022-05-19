@@ -46,7 +46,9 @@
     ]
   },
   "devDependencies": {
+    "babel-jest": "^28.1.0",
     "eslint-config-react-app": "^7.0.1",
+    "jest": "^28.1.0",
     "react-test-renderer": "^18.1.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",

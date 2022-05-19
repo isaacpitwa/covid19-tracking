@@ -8,6 +8,7 @@ import store from './redux/configureStore';
 import App from './App';
 import Metric from './components/Metric';
 import Country from './components/Country';
+import CountriesReducer, { fetchedRegions } from './redux/countries/countries';
 
 const appRender = () => render(
   <Router>
@@ -29,16 +30,16 @@ describe('App', () => {
 
 describe('Renders Metric', () => {
   it('Renders Metric Component', () => {
-    const component = renderer.create(
+    const component = render(
       <Router>
         <Provider store={store}>
           <Metric key="2022-03-10" date="2022-03-10" confirmedCases="120" />
         </Provider>
       </Router>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    expect(tree).toBeDefined();
+    const dateText = component.getAllByText('2022-03-10');
+    expect(dateText).toHaveLength(1);
+    expect(dateText).toBeDefined();
   });
 });
 
@@ -55,4 +56,20 @@ describe('Renders Country', () => {
     expect(headingText).toHaveLength(1);
     expect(headingText).toBeDefined();
   });
+});
+
+describe('Test Redux Store', () => {
+  expect(CountriesReducer.countries).toBeUndefined();
+  fetchedRegions({
+    dates: {
+      '2022-03-10': {
+        countries: {
+          Canada: {
+            name: 'Canada',
+            today_new_confirmed: 1234,
+          },
+        },
+      },
+    },
+  }, { date: '2022-03-10', country: 'Canada' });
 });
