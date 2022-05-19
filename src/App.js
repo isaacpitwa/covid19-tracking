@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Countries from './components/Countries';
+import CountryDetails from './components/CountryDetails';
+import Metrics from './components/Metrics';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route
+        path="/"
+        element={<Metrics />}
+        exact
+      />
+
+      <Route
+        path="/:date/countries"
+        element={<Countries />}
+        exact
+      />
+      <Route
+        path="/:date/countries/:countryName"
+        element={<CountryDetails />}
+        exact
+      />
+    </Routes>
   );
 }
 
