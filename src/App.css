@@ -1,38 +1,284 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
+  justify-content: space-between;
+  padding: 8px 0%;
+}
+
+header h1,
+.select-dates h3 {
+  margin: 0;
+}
+
+.link {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin-top: 0;
+}
+
+.select-dates {
+  display: flex;
+  justify-content: center;
+
+  /* align-items: center; */
+  background-color: #db4680;
   flex-direction: column;
+  padding: 16px;
+  position: fixed;
+  width: 97%;
+  z-index: 100;
+}
+
+.select-dates div {
+  display: flex;
+  padding: 16px;
+  padding-left: 0;
+}
+
+.select-dates div input {
+  width: 35%;
+  height: 32px;
+  border: 2px solid #fff;
+  background-color: #db4680;
+  margin-right: 8px;
+  padding: 0 8px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.page-heading button {
+  text-decoration: none;
+  color: #fff;
+  border: 0;
+  background-color: #fc5294;
+}
+
+.select-dates div button {
+  width: 30%;
+}
+
+.select-dates div button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.home-heading {
+  background-color: #cf4277;
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+  padding: 16px;
+  position: fixed;
+  width: 100%;
+  top: 122px;
+  z-index: 100;
+}
+
+.metrics-list {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 173px;
+}
+
+.metric {
+  width: 25%;
+  height: 32vh;
+  background-color: #db4680;
+  color: #fff;
+  border: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.metric:nth-of-type(8n+2),
+.metric:nth-of-type(8n+4),
+.metric:nth-of-type(8n+5),
+.metric:nth-of-type(8n+7) {
+  background-color: #cf4277;
+}
+
+.metric:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.metric div {
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+  text-align: right;
+}
+
+.metric div h4 {
+  margin: 0;
+  font-size: 21px;
+  font-family: 'Lato', sans-serif;
+}
+
+.metric div p {
+  margin: 0;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Details */
+
+.details-header {
+  padding: 16px;
+  display: flex;
+  background-color: #fc5294;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-top: 32px;
 }
 
-.App-link {
-  color: #61dafb;
+.details-header .img-bg {
+  width: 70%;
+  height: 20vh;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.details-header .content {
+  color: #fff;
+  text-align: right;
+  font-family: 'Lato', sans-serif;
+}
+
+.details-header .content h4 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+}
+
+.details-header .content p {
+  margin: 0;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+}
+
+.heading {
+  background-color: #cf4277;
+  color: #fff;
+  font-size: 16px;
+  padding: 21px 8px;
+  text-transform: uppercase;
+}
+
+/* Region */
+.region {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  background-color: #df4782;
+  padding: 8px 21px;
+  padding-right: 32px;
+}
+
+.region:nth-child(even) {
+  background-color: #cf4277;
+}
+
+.regions-list {
+  margin: 0;
+}
+
+/* Utilities */
+
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fc5294;
+  color: #fff;
+  padding: 0 16px;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+
+.page-heading button .button-txt {
+  display: flex;
+  align-items: center;
+}
+
+.page-heading .page-title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.space-div {
+  width: 20%;
+}
+
+.countries-list {
+  padding-top: 168px;
+}
+
+.details-loading {
+  margin-top: 76px;
+  color: black;
+}
+
+@media (max-width: 480px) {
+  .metric {
+    width: 50%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .metric:nth-of-type(8n+2),
+  .metric:nth-of-type(8n+4),
+  .metric:nth-of-type(8n+5),
+  .metric:nth-of-type(8n+7) {
+    background-color: #db4680;
   }
+
+  .metric:nth-child(4n+1),
+  .metric:nth-child(4n) {
+    background-color: #cf4277;
+  }
+
+  .page-heading {
+    position: fixed;
+    padding: 0;
+    z-index: 100;
+    width: 100%;
+  }
+}
+
+/* Filter */
+.filter {
+  justify-content: center;
+  background-color: #ec4c8a;
+  top: 46px;
+}
+
+.filter div select,
+.filter div input {
+  width: 40%;
+  border: 2px solid #fff;
+  background-color: #db4680;
+  padding: 0 8px;
+  color: #000;
+}
+
+.filter div input::placeholder {
+  color: #000;
 }
