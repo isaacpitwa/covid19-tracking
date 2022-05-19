@@ -113,6 +113,7 @@ ul {
   background-color: #FC5294;
   align-items: center;
   justify-content: center;
+  padding-top: 32px;
 }
 .details-header .img-bg{
   width: 70%;
@@ -199,6 +200,13 @@ button:hover{
 .countries-list {
   padding-top: 46px;
 }
+.details-loading {
+  margin-top: 76px;
+  color: black;
+}
+.container {
+
+}
 
 @media (max-width: 480px) {
 .metric{
@@ -217,10 +225,5 @@ button:hover{
   z-index: 100;
   width: 100%;
 }
-.page-heading{
-  /* padding-top: 46px; */
-}
-
-
 
 }

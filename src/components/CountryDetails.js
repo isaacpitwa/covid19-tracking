@@ -18,7 +18,7 @@ function CountryDetails() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="container">
       <nav className="page-heading">
         <div className="back">
           <button onClick={() => { navigate(`/${params.date}/countries`); }} type="button">
@@ -31,19 +31,19 @@ function CountryDetails() {
         <h4>{params.countryName}</h4>
         <div className="space-div" />
       </nav>
+      <div className="details-header">
+        <div className="img-bg" style={{ backgroundImage: 'url(\'/images/map.png\')' }} />
+        <div className="content">
+          <h4>{ countryDetails ? countryDetails.name : 'loading...'}</h4>
+          <p>
+            {countryDetails ? countryDetails.today_new_confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : 'loading...'}
+            {' '}
+            Cases
+          </p>
+        </div>
+      </div>
       { countryDetails ? (
         <>
-          <div className="details-header">
-            <div className="img-bg" style={{ backgroundImage: 'url(\'/images/map.png\')' }} />
-            <div className="content">
-              <h4>{countryDetails.name}</h4>
-              <p>
-                {countryDetails.today_new_confirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-                {' '}
-                Cases
-              </p>
-            </div>
-          </div>
           <div className="heading">
             Country Regions -
             {' '}
@@ -64,7 +64,7 @@ function CountryDetails() {
                  }
           </ul>
         </>
-      ) : <p>Loading...</p>}
+      ) : <p className="details-loading">Loading...</p>}
 
     </div>
   );
