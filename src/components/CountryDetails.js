@@ -32,7 +32,7 @@ function CountryDetails() {
         <div className="space-div" />
       </nav>
       <div className="details-header">
-        <div className="img-bg" style={{ backgroundImage: 'url(\'/images/map.png\')' }} />
+        <div className="img-bg" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/images/map.png)` }} />
         <div className="content">
           <h4>{ countryDetails ? countryDetails.name : 'loading...'}</h4>
           <p>

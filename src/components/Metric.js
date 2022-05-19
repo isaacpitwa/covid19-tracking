@@ -17,7 +17,7 @@ function Metric(props) {
         navigate(`/${date}/countries`);
       }}
       type="button"
-      style={{ backgroundImage: 'url(images/map.png)' }}
+      style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/images/map.png)` }}
     >
       <div>
         <h4>{date}</h4>
