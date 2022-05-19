@@ -2,22 +2,17 @@
 # COVID 19 Tracking
 
 > The Covid-19 Tracking Project collects and shows  information from different data sources to provide comprehensive data for the novel coronavirus, SARS-CoV-2.
-<!-- 
+
 ## Live preview
 
 ### Github
-Take a look at the Movies page we Create => [link](https://isaacpitwa.github.io/math_magicians/)
+Take a look at the Project => [link](https://isaacpitwa.github.io/covid19-tracking/) 
 
-### Heroku
-Take a look at the Movies page we Create => [link](https://polar-shelf-17959.herokuapp.com/)
-
-
-### Netlify
-Take a look at the Movies page we Create => [link](https://math-magics.netlify.app/) -->
 
 ## Built With
 
 - React
+- REdux
 - Jsx
 - Webpack
 - GitFlow
