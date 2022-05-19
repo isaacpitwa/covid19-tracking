@@ -19,7 +19,7 @@ function Country(props) {
         navigate(`/${params.date}/countries/${name}`);
       }}
       type="button"
-      style={{ backgroundImage: 'url(\'/images/map.png\')' }}
+      style={{ backgroundImage: 'url(\'images/map.png\')' }}
     >
       <div>
         <h4>{name}</h4>
