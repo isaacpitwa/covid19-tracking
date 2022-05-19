@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom';
 import store from './redux/configureStore';
@@ -28,7 +28,7 @@ describe('App', () => {
 });
 
 describe('Renders Metric', () => {
-  it('Renders Metric Componet', () => {
+  it('Renders Metric Component', () => {
     const component = renderer.create(
       <Router>
         <Provider store={store}>
@@ -43,7 +43,7 @@ describe('Renders Metric', () => {
 });
 
 describe('Renders Country', () => {
-  it('Renders Country Componet', () => {
+  it('Renders Country Component', () => {
     const component = render(
       <Router>
         <Provider store={store}>
