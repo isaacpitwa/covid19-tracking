@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { searchCountry } from '../redux/countries/countries';
+import { searchCountry, sortCountries } from '../redux/countries/countries';
 
 function Filter() {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ function Filter() {
     dispatch(searchCountry(e.target.value));
   };
   const onOrderBy = (e) => {
-    console.log(e.target.value);
+    dispatch(sortCountries(e.target.value));
   };
   return (
     <div className="select-dates filter">
@@ -21,15 +21,15 @@ function Filter() {
             Order By
           </option>
           <option value="asc">
-            High To Low
+            Low To High
           </option>
           <option value="desc">
-            Low To High
+            High To Low
           </option>
           <option value="alpha-asc">
             Alphabetic Ascending
           </option>
-          <option value="audi">
+          <option value="alpha-desc">
             Alphabetic Descending
           </option>
         </select>

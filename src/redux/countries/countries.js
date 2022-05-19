@@ -73,8 +73,28 @@ export default function reducer(state = [], action = {}) {
       if (action.order === 'asc') {
         return {
           ...state,
-          filteredCountries: state.countries.sort((current,next)=>current.firstname.localeCompare(b.firstname)),
-          filter: false,
+          filteredCountries: state.countries.sort(
+            (current, next) => current.today_new_confirmed - next.today_new_confirmed,
+          ),
+          filter: true,
+        };
+      }
+      if (action.order === 'desc') {
+        return {
+          ...state,
+          filteredCountries: state.countries.sort(
+            (current, next) => current.today_new_confirmed - next.today_new_confirmed,
+          ).reverse(),
+          filter: true,
+        };
+      }
+      if (action.order === 'alpha-asc') {
+        return {
+          ...state,
+          filteredCountries: state.countries.sort(
+            (current, next) => current.name.localeCompare(next.name),
+          ),
+          filter: true,
         };
       }
       return {
