@@ -7,6 +7,7 @@ import '@testing-library/jest-dom';
 import store from './redux/configureStore';
 import App from './App';
 import Metric from './components/Metric';
+import Country from './components/Country';
 
 const appRender = () => render(
   <Router>
@@ -24,6 +25,9 @@ describe('App', () => {
     appRender();
     expect(screen.getByText('Stats by Date')).toBeInTheDocument();
   });
+});
+
+describe('Renders Metric', () => {
   it('Renders Metric Componet', () => {
     const component = renderer.create(
       <Router>
@@ -35,5 +39,20 @@ describe('App', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
     expect(tree).toBeDefined();
+  });
+});
+
+describe('Renders Country', () => {
+  it('Renders Country Componet', () => {
+    const component = render(
+      <Router>
+        <Provider store={store}>
+          <Country name="Canada" confirmedCases="200" />
+        </Provider>
+      </Router>,
+    );
+    const headingText = component.getAllByText('Canada');
+    expect(headingText).toHaveLength(1);
+    expect(headingText).toBeDefined();
   });
 });
