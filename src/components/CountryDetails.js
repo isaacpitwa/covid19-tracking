@@ -22,13 +22,13 @@ function CountryDetails() {
       <nav className="page-heading">
         <div className="back">
           <button onClick={() => { navigate(`/${params.date}/countries`); }} type="button">
-            <p>
+            <p className="button-txt">
               <IoIosArrowBack size={18} />
               <span>Countries</span>
             </p>
           </button>
         </div>
-        <h4>{params.countryName}</h4>
+        <h4 className="page-title">{params.countryName}</h4>
         <div className="space-div" />
       </nav>
       <div className="details-header">

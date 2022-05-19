@@ -21,13 +21,13 @@ function Countries() {
       <nav className="page-heading">
         <div className="back">
           <button onClick={() => { navigate('/'); }} type="button">
-            <p>
+            <p className="button-txt">
               <IoIosArrowBack size={18} />
               <span>{params.date}</span>
             </p>
           </button>
         </div>
-        <h4>Countries</h4>
+        <h4 className="page-title">Countries</h4>
         <div className="space-div" />
       </nav>
       <ul className="countries-list">

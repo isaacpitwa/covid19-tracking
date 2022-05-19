@@ -53,6 +53,17 @@ ul {
   margin-right: 8px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+.page-heading button {
+  text-decoration: none;
+  color: #fff;
+  border: 0;
+  background-color: #fc5294;
+}
+
 .select-dates div button {
   width: 30%;
 }
@@ -204,26 +215,15 @@ ul {
   width: 100%;
 }
 
-.page-heading button {
-  text-decoration: none;
-  color: #fff;
-  border: 0;
-  background-color: #fc5294;
-}
-
-.page-heading button p {
+.page-heading button .button-txt {
   display: flex;
   align-items: center;
 }
 
-.page-heading h4 {
+.page-heading .page-title {
   margin: 0;
   font-weight: 400;
   font-size: 18px;
-}
-
-button:hover {
-  cursor: pointer;
 }
 
 .space-div {
@@ -237,10 +237,6 @@ button:hover {
 .details-loading {
   margin-top: 76px;
   color: black;
-}
-
-.container {
-
 }
 
 @media (max-width: 480px) {
